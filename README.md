@@ -53,17 +53,17 @@ The interface is a single 5:4 window with every control inline: one record butto
 
 ```mermaid
 flowchart LR
-    Mic[Microphone] --> Recorder[AudioRecorder<br/>sounddevice stream]
-    File[Audio file] --> Loader[AudioFileLoader<br/>librosa / pydub]
-    Recorder -->|level| Meter[LevelMeter]
-    Recorder -->|PCM| Controller[RecordingController]
-    Loader --> Controller
-    Controller --> Transcriber
-    Transcriber -->|local| Whisper[Faster-Whisper<br/>CTranslate2]
-    Transcriber -->|cloud| Gemini[Google Gemini]
-    Transcriber -->|segments| UI[MainContentPanel]
-    UI --> Export[ExportManager<br/>TXT · DOCX · PDF · HTML · JSON]
-    UI --> Sessions[SessionManager]
+    mic["Microphone"] --> recorder["AudioRecorder<br/>sounddevice stream"]
+    audiofile["Audio file"] --> loader["AudioFileLoader<br/>librosa and pydub"]
+    recorder -->|"level"| meter["LevelMeter"]
+    recorder -->|"PCM audio"| controller["RecordingController"]
+    loader --> controller
+    controller --> transcriber["Transcriber"]
+    transcriber -->|"local"| whisper["Faster-Whisper<br/>CTranslate2"]
+    transcriber -->|"cloud"| gemini["Google Gemini"]
+    transcriber -->|"segments"| panel["MainContentPanel"]
+    panel --> exporter["ExportManager<br/>TXT, DOCX, PDF, HTML, JSON"]
+    panel --> sessions["SessionManager"]
 ```
 
 Audio capture, model loading and transcription each run on worker threads and report back to the UI through Qt signals, so the window stays responsive during long transcriptions.
