@@ -1,0 +1,12 @@
+PyQt6>=6.6
+numpy>=1.26
+sounddevice>=0.4.6
+pydub>=0.25
+audioop-lts>=0.2; python_version >= "3.13"
+librosa>=0.10
+faster-whisper>=1.1
+tqdm>=4.66
+google-generativeai>=0.8
+cryptography>=42
+python-docx>=1.1
+reportlab>=4.0
