@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="440" viewBox="0 0 1100 440" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif">
+  <title>Tasjeel architecture</title>
+  <desc>Microphone audio flows through AudioRecorder, and audio files through AudioFileLoader, into RecordingController and the Transcriber. The Transcriber uses Faster-Whisper locally or Google Gemini in the cloud, and streams segments to MainContentPanel, which feeds ExportManager and SessionManager. AudioRecorder also drives the LevelMeter.</desc>
+  <rect width="1100" height="440" rx="18" fill="#0b0b0b"/>
+  <rect x="0.5" y="0.5" width="1099" height="439" rx="17.5" fill="none" stroke="#222222"/>
+
+  <g fill="none" stroke="#7a7a7a" stroke-width="1.6">
+    <path d="M180 88 H238"/>
+    <path d="M180 268 H238"/>
+    <path d="M400 78 H430 V48 H458"/>
+    <path d="M400 102 H430 V172 H458"/>
+    <path d="M400 268 H430 V192 H458"/>
+    <path d="M620 182 H678"/>
+    <path d="M840 164 H870 V68 H898"/>
+    <path d="M840 182 H898"/>
+    <path d="M760 210 V298"/>
+    <path d="M840 318 H870 V288 H898"/>
+    <path d="M840 338 H870 V378 H898"/>
+  </g>
+
+  <g fill="#7a7a7a">
+    <polygon points="240,88 231,83.5 231,92.5"/>
+    <polygon points="240,268 231,263.5 231,272.5"/>
+    <polygon points="460,48 451,43.5 451,52.5"/>
+    <polygon points="460,172 451,167.5 451,176.5"/>
+    <polygon points="460,192 451,187.5 451,196.5"/>
+    <polygon points="680,182 671,177.5 671,186.5"/>
+    <polygon points="900,68 891,63.5 891,72.5"/>
+    <polygon points="900,182 891,177.5 891,186.5"/>
+    <polygon points="900,288 891,283.5 891,292.5"/>
+    <polygon points="900,378 891,373.5 891,382.5"/>
+    <polygon points="760,300 755.5,291 764.5,291"/>
+  </g>
+
+  <g font-size="11" fill="#a3a3a3">
+    <text x="404" y="72">level</text>
+    <text x="438" y="140">PCM audio</text>
+    <text x="878" y="118">local</text>
+    <text x="864" y="174">cloud</text>
+    <text x="768" y="258">segments</text>
+  </g>
+
+  <g fill="#141414" stroke="#2c2c2c" stroke-width="1.2">
+    <rect x="20" y="60" width="160" height="56" rx="10"/>
+    <rect x="20" y="240" width="160" height="56" rx="10"/>
+    <rect x="240" y="60" width="160" height="56" rx="10"/>
+    <rect x="240" y="240" width="160" height="56" rx="10"/>
+    <rect x="460" y="20" width="160" height="56" rx="10"/>
+    <rect x="460" y="150" width="160" height="56" rx="10"/>
+    <rect x="900" y="40" width="160" height="56" rx="10"/>
+    <rect x="900" y="150" width="160" height="56" rx="10"/>
+    <rect x="680" y="300" width="160" height="56" rx="10"/>
+    <rect x="900" y="260" width="160" height="56" rx="10"/>
+    <rect x="900" y="350" width="160" height="56" rx="10"/>
+  </g>
+  <rect x="680" y="154" width="160" height="56" rx="10" fill="#1a0b0a" stroke="#ff453a" stroke-width="1.6"/>
+
+  <g text-anchor="middle" fill="#f5f5f5" font-size="14" font-weight="600">
+    <text x="100" y="93">Microphone</text>
+    <text x="100" y="273">Audio file</text>
+    <text x="320" y="84">AudioRecorder</text>
+    <text x="320" y="264">AudioFileLoader</text>
+    <text x="540" y="44">LevelMeter</text>
+    <text x="540" y="174">RecordingController</text>
+    <text x="760" y="178">Transcriber</text>
+    <text x="980" y="64">Faster-Whisper</text>
+    <text x="980" y="174">Google Gemini</text>
+    <text x="760" y="324">MainContentPanel</text>
+    <text x="980" y="284">ExportManager</text>
+    <text x="980" y="374">SessionManager</text>
+  </g>
+  <g text-anchor="middle" fill="#9a9a9a" font-size="11">
+    <text x="320" y="102">sounddevice stream</text>
+    <text x="320" y="282">librosa and pydub</text>
+    <text x="540" y="62">live input level</text>
+    <text x="540" y="192">record, pause, stop</text>
+    <text x="760" y="196">worker thread</text>
+    <text x="980" y="82">CTranslate2, on device</text>
+    <text x="980" y="192">optional cloud engine</text>
+    <text x="760" y="342">streaming transcript</text>
+    <text x="980" y="302">TXT, DOCX, PDF, HTML, JSON</text>
+    <text x="980" y="392">auto-save</text>
+  </g>
+</svg>
